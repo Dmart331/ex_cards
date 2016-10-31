@@ -7,7 +7,7 @@ var card = document.getElementsByClassName('second');
 submit.addEventListener("click" , function(event){
 
 	newInput = input.value;
-	output.innerHTML += '<div class="second">' + '<button type="reset" class="delete">' + "Delete" + '</button>' + newInput + "</div>" ;
+	output.innerHTML += '<div class="second">' +  newInput +'<button type="reset" class="delete">' + "Delete" + '</button></div>' ;
 		// var del=document.getElementsByClassName('delete');
 
 		// del.addEventListener("click" , function(event) {
@@ -22,9 +22,9 @@ submit.addEventListener("click" , function(event){
 var del = document.getElementById("delete");
 document.addEventListener("click" , function(event){
 	console.log('click');
-		if (event.target.className === 'delete') {
+		if (event.target.innerHTML === 'Delete') {
 		console.log("card", card)
-        event.target.remove('card');
+        event.target.parentElement.remove();
     }
 
 })
